@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    user:
+      name: localuser
+      password: localpass
+
+cas:
+  server-url-prefix: https://demo.cas-server.com/sso
+  server-login-url: ${cas.server-url-prefix}/login
+  server-logout-url: ${cas.server-url-prefix}/logout
+  client-host-url: http://localhost:8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.example.cassdemo: DEBUG
